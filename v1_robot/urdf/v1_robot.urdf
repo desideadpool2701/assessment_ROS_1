@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="v1_robot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0018381 -6.0699E-18 0.015098"
+        rpy="0 0 0" />
+      <mass
+        value="3" />
+      <inertia
+        ixx="0.0087992"
+        ixy="-4.5715E-19"
+        ixz="2.0587E-05"
+        iyy="0.011492"
+        iyz="5.1789E-19"
+        izz="0.020008" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://v1_robot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://v1_robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="R_link">
+    <inertial>
+      <origin
+        xyz="-0.01 -8.6736E-18 -1.3752E-10"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="8.8448E-05"
+        ixy="-3.0066E-21"
+        ixz="5.7327E-13"
+        iyy="4.6764E-05"
+        iyz="8.4703E-21"
+        izz="4.6764E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://v1_robot/meshes/R_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://v1_robot/meshes/R_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.11955 0.015"
+      rpy="1.966 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="L_link">
+    <inertial>
+      <origin
+        xyz="0.01 -2.6021E-17 -2.949E-17"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="8.8448E-05"
+        ixy="-4.4153E-21"
+        ixz="-1.1559E-21"
+        iyy="4.6764E-05"
+        iyz="6.7763E-21"
+        izz="4.6764E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://v1_robot/meshes/L_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://v1_robot/meshes/L_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.11955 0.015"
+      rpy="1.9952 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Castor_link">
+    <inertial>
+      <origin
+        xyz="1.3878E-17 4.5103E-17 1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="1.6362E-05"
+        ixy="-2.1176E-22"
+        ixz="6.088E-22"
+        iyy="1.6362E-05"
+        iyz="4.2352E-22"
+        izz="1.6362E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://v1_robot/meshes/Castor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://v1_robot/meshes/Castor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Castor_joint"
+    type="continuous">
+    <origin
+      xyz="-0.11 0 0"
+      rpy="2.7296 0.97895 -0.15447" />
+    <parent
+      link="base_link" />
+    <child
+      link="Castor_link" />
+    <axis
+      xyz="0.085836 0.95653 0.27871" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+</robot>
