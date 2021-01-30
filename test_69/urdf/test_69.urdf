@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="test_69">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-1.0983E-18 0.01 -2.9975E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.058429" />
+      <inertia
+        ixx="6.4378E-06"
+        ixy="-4.8692E-22"
+        ixz="2.0832E-21"
+        iyy="5.448E-05"
+        iyz="-9.7921E-39"
+        izz="5.1938E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_69/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_69/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="test_link">
+    <inertial>
+      <origin
+        xyz="-7.8061E-18 0.01 -7.0438E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.058429" />
+      <inertia
+        ixx="6.4378E-06"
+        ixy="-6.6214E-22"
+        ixz="-1.9058E-21"
+        iyy="5.448E-05"
+        iyz="-9.5155E-23"
+        izz="5.1938E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_69/meshes/test_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_69/meshes/test_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Test_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.02"
+      rpy="1.5708 0 0.11741" />
+    <parent
+      link="base_link" />
+    <child
+      link="test_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/test_69</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+  <!-- transmission -->
+  <transmission name="base_to_second_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor1">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="Test_joint">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+`
+</robot>
