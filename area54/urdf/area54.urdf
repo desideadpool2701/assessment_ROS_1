@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="area54">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.074361 2.1099E-08 0.018509"
+        rpy="0 0 0" />
+      <mass
+        value="5" />
+      <inertia
+        ixx="0.19171"
+        ixy="-1.6123E-08"
+        ixz="0.00045566"
+        iyy="0.099845"
+        iyz="-8.6121E-11"
+        izz="0.28912" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://area54/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://area54/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="L_link">
+    <inertial>
+      <origin
+        xyz="0.02 -1.3878E-17 -1.7347E-17"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.00086187"
+        ixy="-7.7277E-20"
+        ixz="-5.6633E-20"
+        iyy="0.00047589"
+        iyz="1.0842E-19"
+        izz="0.00047589" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://area54/meshes/L_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://area54/meshes/L_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_joint"
+    type="continuous">
+    <origin
+      xyz="0.082504 0.205 0.02"
+      rpy="2.5634 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="R_link">
+    <inertial>
+      <origin
+        xyz="-0.02 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.00086187"
+        ixy="-6.3145E-20"
+        ixz="-8.8244E-20"
+        iyy="0.00047589"
+        iyz="6.7763E-20"
+        izz="0.00047589" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://area54/meshes/R_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://area54/meshes/R_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_joint"
+    type="continuous">
+    <origin
+      xyz="0.082504 -0.205 0.02"
+      rpy="2.2586 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="castor_link">
+    <inertial>
+      <origin
+        xyz="0 2.7756E-17 2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.00012425"
+        ixy="0"
+        ixz="-6.7763E-21"
+        iyy="0.00012425"
+        iyz="0"
+        izz="0.00012425" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://area54/meshes/castor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://area54/meshes/castor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="castor_joint"
+    type="continuous">
+    <origin
+      xyz="-0.25 0 0"
+      rpy="1.9804 0.71349 -0.61193" />
+    <parent
+      link="base_link" />
+    <child
+      link="castor_link" />
+    <axis
+      xyz="0.43433 0.67086 0.60109" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+
+
+  <gazebo>
+
+    <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
+
+      <legacyMode>false</legacyMode>
+
+      <alwaysOn>true</alwaysOn>
+
+      <updateRate>20</updateRate>
+
+      <leftJoint>L_joint</leftJoint>
+
+      <rightJoint>R_joint</rightJoint>
+
+      <wheelSeparation>0.41</wheelSeparation>
+
+      <wheelDiameter>0.13</wheelDiameter>
+
+      <torque>2</torque>
+
+      <commandTopic>cmd_vel</commandTopic>
+
+      <odometryTopic>odom</odometryTopic>
+
+      <odometryFrame>odom</odometryFrame>
+
+      <robotBaseFrame>base_link</robotBaseFrame>
+
+    </plugin>
+
+  </gazebo>
+  <link
+    name="grip_link">
+    <inertial>
+      <origin
+        xyz="-0.05 0.0046968 0.10709"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.00625"
+        ixy="-1.975E-18"
+        ixz="1.1185E-18"
+        iyy="0.02637"
+        iyz="0.0009528"
+        izz="0.022614" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://area54/meshes/grip_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://area54/meshes/grip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="grip_joint"
+    type="continuous">
+    <origin
+      xyz="0.09 0.05 0.05"
+      rpy="1.583 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="grip_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="2000"
+      velocity="0.5" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/area54</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+  <!-- transmission -->
+  <transmission name="base_to_second_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor1">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="grip_joint">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+</robot>
