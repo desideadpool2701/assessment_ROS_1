@@ -8,17 +8,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.074361 2.1099E-08 0.018509"
+        xyz="-0.065009 0.00037769 0.034384"
         rpy="0 0 0" />
       <mass
         value="5" />
       <inertia
-        ixx="0.19171"
-        ixy="-1.6123E-08"
-        ixz="0.00045566"
-        iyy="0.099845"
-        iyz="-8.6121E-11"
-        izz="0.28912" />
+        ixx="0.22816"
+        ixy="-0.0007158"
+        ixz="-0.0020332"
+        iyy="0.13923"
+        iyz="3.5333E-05"
+        izz="0.3473" />
     </inertial>
     <visual>
       <origin
@@ -48,14 +48,14 @@
     name="L_link">
     <inertial>
       <origin
-        xyz="0.02 -1.3878E-17 -1.7347E-17"
+        xyz="0.02 0 -1.3878E-17"
         rpy="0 0 0" />
       <mass
-        value="1" />
+        value="3" />
       <inertia
         ixx="0.00086187"
-        ixy="-7.7277E-20"
-        ixz="-5.6633E-20"
+        ixy="-7.0046E-20"
+        ixz="-8.4808E-20"
         iyy="0.00047589"
         iyz="1.0842E-19"
         izz="0.00047589" />
@@ -104,13 +104,13 @@
         xyz="-0.02 0 0"
         rpy="0 0 0" />
       <mass
-        value="1" />
+        value="3" />
       <inertia
         ixx="0.00086187"
         ixy="-6.3145E-20"
         ixz="-8.8244E-20"
         iyy="0.00047589"
-        iyz="6.7763E-20"
+        iyz="5.421E-20"
         izz="0.00047589" />
     </inertial>
     <visual>
@@ -190,23 +190,6 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="castor_joint"
-    type="continuous">
-    <origin
-      xyz="-0.25 0 0"
-      rpy="1.9804 0.71349 -0.61193" />
-    <parent
-      link="base_link" />
-    <child
-      link="castor_link" />
-    <axis
-      xyz="0.43433 0.67086 0.60109" />
-    <dynamics
-      damping="0"
-      friction="0" />
-  </joint>
-
 
   <gazebo>
 
@@ -226,7 +209,7 @@
 
       <wheelDiameter>0.13</wheelDiameter>
 
-      <torque>2</torque>
+      <torque>5</torque>
 
       <commandTopic>cmd_vel</commandTopic>
 
@@ -239,21 +222,38 @@
     </plugin>
 
   </gazebo>
+
+  <joint
+    name="castor_joint"
+    type="continuous">
+    <origin
+      xyz="-0.25 0 0"
+      rpy="1.9804 0.71349 -0.61193" />
+    <parent
+      link="base_link" />
+    <child
+      link="castor_link" />
+    <axis
+      xyz="0.43433 0.67086 0.60109" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
   <link
     name="grip_link">
     <inertial>
       <origin
-        xyz="-0.05 0.0046968 0.10709"
+        xyz="-0.22089 -0.01154 0.071698"
         rpy="0 0 0" />
       <mass
-        value="1" />
+        value="0.8" />
       <inertia
-        ixx="0.00625"
-        ixy="-1.975E-18"
-        ixz="1.1185E-18"
-        iyy="0.02637"
-        iyz="0.0009528"
-        izz="0.022614" />
+        ixx="0.00024024"
+        ixy="0.00027239"
+        ixz="-0.00021252"
+        iyy="0.0062657"
+        iyz="4.5562E-05"
+        izz="0.0063957" />
     </inertial>
     <visual>
       <origin
@@ -281,21 +281,21 @@
   </link>
   <joint
     name="grip_joint"
-    type="continuous">
+    type="revolute">
     <origin
-      xyz="0.09 0.05 0.05"
-      rpy="1.583 0 1.5708" />
+      xyz="0.181 0.22 0.02"
+      rpy="1.5708 0.0033621 1.5708" />
     <parent
       link="base_link" />
     <child
       link="grip_link" />
     <axis
-      xyz="1 0 0" />
+      xyz="0 0 -1" />
     <limit
       lower="0"
-      upper="1.57"
-      effort="2000"
-      velocity="0.5" />
+      upper="1.7"
+      effort="3000"
+      velocity="0.8" />
     <dynamics
       damping="0"
       friction="0" />
@@ -319,4 +319,98 @@
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
   </transmission>
+
+  <link
+    name="photo_link">
+    <inertial>
+      <origin
+        xyz="0 0.025 -7.6233E-19"
+        rpy="0 0 0" />
+      <mass
+        value="0.2" />
+      <inertia
+        ixx="5.2083E-05"
+        ixy="-7.5668E-22"
+        ixz="-6.2116E-22"
+        iyy="5.2083E-05"
+        iyz="1.4117E-21"
+        izz="5.2083E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="photo_joint"
+    type="fixed">
+    <origin
+      xyz="-0.25 0 0.3"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="photo_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+  <gazebo reference="photo_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>robot/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>photo_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
 </robot>

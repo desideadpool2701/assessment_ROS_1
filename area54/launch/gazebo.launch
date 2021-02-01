@@ -1,6 +1,5 @@
 <launch>
-  <include
-    file="$(find gazebo_ros)/launch/empty_world.launch" />
+
   <node
     name="tf_footprint_base"
     pkg="tf"
@@ -17,6 +16,8 @@
     pkg="rostopic"
     type="rostopic"
     args="pub /calibrated std_msgs/Bool true" />
+
+
 
   <param name="robot_description" command="cat $(find area54)/urdf/area54.urdf"/>
 
@@ -36,4 +37,5 @@
           output="screen">
         <remap from="joint_states" to="/area54/joint_states" />
     </node>
+
 </launch>

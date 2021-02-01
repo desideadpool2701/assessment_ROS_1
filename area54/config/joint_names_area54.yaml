@@ -15,4 +15,4 @@ area54:
 gazebo_ros_control/pid_gains:
 
         
-     grip_joint: {p: 2.0, i: 0.0, d: 0.0}
+     grip_joint: {p: 2.0, i: 0.0, d: 0.2}
