@@ -1,0 +1,29 @@
+Step 1: Launch robot in gazebo
+
+(new terminal)
+
+If assessment_world is loaded in gazebo then use 
+
+  roslaunch bot_nav gazebo.launch
+
+Else use
+
+  roslaunch bot_nav gazebo_empty_world.launch
+  
+
+
+Step 2: Launch amcl_demo
+
+(new terminal)
+roslaunch bot_nav amcl_demo.launch
+
+Step 3: Launch Rviz
+
+(new terminal)
+roslaunch bot_nav rviz_amcl.launch
+
+
+
+Refer ReadMe_teleop for manual control when required ("for gate control and ball allingment")
+
+

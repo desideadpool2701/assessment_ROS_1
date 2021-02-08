@@ -1,0 +1,28 @@
+TO LAUNCH THE ROBOT:
+
+If assessment_world is loaded in gazebo then use
+
+  roslaunch bot_nav gazebo.launch
+
+Else use
+
+  roslaunch bot_nav gazebo_empty_world.launch
+
+
+TO CONTROL THE ROBOT:
+
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+
+TO OPEN THE GATE:
+
+rostopic pub -1 /bot_nav/base_to_second_joint_position_controller/command std_msgs/Float64 "data: 2.1 "
+
+
+TO CLOSE THE GATE:
+
+rostopic pub -1 /bot_nav/base_to_second_joint_position_controller/command std_msgs/Float64 "data: 0 "
+
+
+TO CHANGE THE "PID-values" OF GATE:
+
+open this file - botnav/config/joint_names_bot_nav.yaml

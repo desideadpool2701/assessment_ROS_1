@@ -1,0 +1,39 @@
+Step 1: Launch robot in gazebo
+
+(new terminal)
+
+If assessment_world is loaded in gazebo then use
+
+  roslaunch bot_nav gazebo.launch
+
+Else use
+
+  roslaunch bot_nav gazebo_empty_world.launch
+
+
+Step 2: Launch gmapping_demo
+
+(new terminal)
+roslaunch bot_nav gmappng_demo.launch
+
+Step 3: Launch Rviz
+
+(new terminal)
+roslaunch bot_nav rviz_gmap.launch
+
+
+Step 4: Teleop the bot to create a map
+
+(new terminal)
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+
+
+Step 5: Move the robot around to create a map
+
+
+Step 6: Save the map
+
+(new terminal)
+rosrun map_server map_saver -f ~/my_ws/src/bot_nav/maps/your_map_name
+
+

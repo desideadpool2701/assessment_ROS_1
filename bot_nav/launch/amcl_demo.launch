@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+
+  <master auto="start"/>
+
+  <!-- Map server -->
+  <arg name="map_file" default="$(find bot_nav)/maps/dev_map.yaml"/> <!---"added map location" -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+
+  <!-- AMCL -->
+  <arg name="custom_amcl_launch_file" default="$(find bot_nav)/launch/includes/amcl/$amcl.launch.xml"/> <!---"added location" -->
+  <arg name="initial_pose_x" default="0.0"/> 
+  <arg name="initial_pose_y" default="0.0"/> 
+  <arg name="initial_pose_a" default="0.0"/>
+
+  <!-- Move base -->
+
+  <include file="$(find bot_nav)/launch/includes/move_base.launch.xml"> <!---"added location" -->
+
+  </include>
+
+</launch>
+
